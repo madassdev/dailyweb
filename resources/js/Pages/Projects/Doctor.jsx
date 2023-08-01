@@ -24,42 +24,60 @@ function Doctor() {
                         </a>
                     </div>
                 </div>
+
                 <div className="space-y-6 mt-12 px-32">
-                    <p className="text-center font-bosld text-4xl capitalize tracking-wider">
-                        Consult a Doctor Anytime, Anywhere by Video call
-                    </p>
+                    <ScrollAnimation animateIn="fadeInUp">
+                        <p className="text-center font-bosld text-4xl capitalize tracking-wider">
+                            Consult a Doctor Anytime, Anywhere by Video call
+                        </p>
+                    </ScrollAnimation>
+                    <ScrollAnimation animateIn="fadeInUp">
+                        <p className="text-sm text-center text-gray-300">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Commodi quibusdam minus a pariatur corporis
+                            consequatur nihil, numquam quam voluptas molestias,
+                            iste officiis possimus nobis voluptatum libero nulla
+                            ipsam saepe voluptatem. Iste officiis possimus nobis
+                            voluptatum libero nulla ipsam saepe voluptatem.
+                        </p>
+                    </ScrollAnimation>
 
-                    <p className="text-sm text-center text-gray-300">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Commodi quibusdam minus a pariatur corporis
-                        consequatur nihil, numquam quam voluptas molestias, iste
-                        officiis possimus nobis voluptatum libero nulla ipsam
-                        saepe voluptatem. Iste officiis possimus nobis
-                        voluptatum libero nulla ipsam saepe voluptatem.
-                    </p>
-
-                    <div className="flex items-center justify-center">
-                        <a
-                            href="#"
-                            className="p-2 px-8 rounded-full bg-white text-[#082144] border border-white hover:bg-[#082144] hover:text-white transition-all ease-in-out"
-                        >
-                            Ask a Doctor Online
-                        </a>
-                    </div>
+                    <ScrollAnimation animateIn="fadeInUp" delay={300}>
+                        <div className="flex items-center justify-center">
+                            <a
+                                href="#"
+                                className="p-2 px-8 rounded-full bg-white text-[#082144] border border-white hover:bg-[#082144] hover:text-white transition-all ease-in-out"
+                            >
+                                Ask a Doctor Online
+                            </a>
+                        </div>
+                    </ScrollAnimation>
                 </div>
 
                 <div className="absolute top-0 -left-32 bottom-0 flex items-center">
-                    <img src="/images/circle-ring.png" className="w-48 h-48" />
+                    <ScrollAnimation animateIn="fadeIn">
+                        <img
+                            src="/images/circle-ring.png"
+                            className="w-48 h-48"
+                        />
+                    </ScrollAnimation>
                 </div>
 
                 <div className="absolute bottom-4 right-[10%]">
-                    <img src="/images/dots.png" className="w-24 opacity-40" />
+                    <ScrollAnimation animateIn="fadeIn">
+                        <img
+                            src="/images/dots.png"
+                            className="w-24 opacity-40"
+                        />
+                    </ScrollAnimation>
                 </div>
                 <div className="absolute w-2/3 mx-auto flex justify-center -bottom-52 z-50 left-0 right-0">
+                <ScrollAnimation animateIn="fadeInUp">
                     <img
                         src="/images/doctor.jpeg"
                         className="w-[32em] h-72 object-cover rounded-2xl"
                     />
+                    </ScrollAnimation>
                 </div>
             </div>
 
@@ -151,6 +169,7 @@ function Doctor() {
                     </div>
                 </div>
             </ScrollAnimation>
+            <ScrollAnimation animateIn="fadeInUp">
             <div className="flex items-center space-x-24 px-24 py-16">
                 <div className="space-y-8">
                     <div className="">
@@ -212,7 +231,9 @@ function Doctor() {
                     />
                 </div>
             </div>
+            </ScrollAnimation>
 
+            <ScrollAnimation animateIn="fadeInUp">
             <div className="flex space-x-24 px-32 items-center">
                 <div className="w-1/2 p-8">
                     <img src="/images/nurse-3.png" className="w-" />
@@ -301,6 +322,7 @@ function Doctor() {
                     </div>
                 </div>
             </div>
+            </ScrollAnimation>
             <div className="grid grid-cols-4 gap-8 bg-[#082144] text-white p-8 px-24">
                 <div className="space-y-8">
                     <p className="font-bold">Links</p>
