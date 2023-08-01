@@ -6,7 +6,7 @@ function Doctor() {
     return (
         <div className="font-poppins">
             <Head>
-                <title>Frankly Dev- Project Doctor</title>
+                <title>Frankly Dev - Project Doctor</title>
                 <meta name="description" content="Redesign of doctor UI into a web page using ReactJs and TailwindCSS" />
             </Head>
             <div className="w-full bg-[#082144] text-white p-5 px-16 pb-28 relative">
