@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     AiOutlineArrowDown,
     AiOutlineGateway,
@@ -9,8 +9,16 @@ import {
 } from "react-icons/ai";
 import { easeIn, motion } from "framer-motion";
 import Nav from "./components/Nav";
+import Intro from "./components/Intro";
 
 function Index() {
+    const tabs = [
+        { id: "home", label: "Home" },
+        { id: "projects", label: "Projects" },
+        // { id: "fun", label: "Something Fun" },
+        // { id: "roar", label: "Roar" },
+    ];
+    const [activeTab, setActiveTab] = useState(tabs[0].id);
     const fadeIn = {
         hidden: { opacity: 0 },
         visible: { opacity: 1 },
@@ -48,14 +56,14 @@ function Index() {
 
             <div className="ml-16 h-screen border p-32 flex  items-center space-x-16">
                 <motion.div
-                    className="relative"
+                    className="relative w-[600px]"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     // transition={{  ease: "easeIn" }}
                 >
-                    <div className="opacity-50 absolute -left-4 top-12 w-40 h-40 mix-blend-multiply filter blur-xl bg-purple-300 rounded-full animate-blob ani"></div>
+                    {/* <div className="opacity-50 absolute -left-4 top-12 w-40 h-40 mix-blend-multiply filter blur-xl bg-purple-300 rounded-full animate-blob ani"></div>
                     <div className="opacity-50 absolute right-8 top-12 w-40 h-40 mix-blend-multiply filter blur-xl bg-pink-300 rounded-full animate-blob anim-delay-2"></div>
-                    <div className="opacity-50 absolute left-16 top-24 w-40 h-40 mix-blend-multiply filter blur-xl bg-yellow-300 rounded-full animate-blob anim-delay-4"></div>
+                    <div className="opacity-50 absolute left-16 top-24 w-40 h-40 mix-blend-multiply filter blur-xl bg-yellow-300 rounded-full animate-blob anim-delay-4"></div> */}
                     <img
                         src="/images/faves_dp.png"
                         className="relative opacsity-0"
@@ -63,57 +71,12 @@ function Index() {
                 </motion.div>
                 {/* Text description */}
                 <div className="space-y-8">
-                    <Nav />
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={{
-                            visible: { transition: { staggerChildren: 0.5 } },
-                        }}
-                    >
-                        <motion.div
-                            className="space-y-4"
-                            initial="hidden"
-                            animate="visible"
-                        >
-                            <motion.p variants={fadeIn} className="uppercase">
-                                Hi there, I'm
-                            </motion.p>
-
-                            <motion.p
-                                variants={fadeIn}
-                                className="text-4xl font-bold text-purple-600"
-                            >
-                                FRANK {""}
-                                <span className="text-gray-600">OLAYINKA FAVOUR</span>
-                            </motion.p>
-
-                            <motion.p
-                                variants={fadeIn}
-                                className="text-sm text-gray-400"
-                            >
-                                Hello there! I am a full-stack web developer
-                                with a knack for transforming ideas into
-                                reality. With expertise in HTML, CSS,
-                                JavaScript, PHP, and more, I excel in creating
-                                responsive and dynamic web applications. My
-                                mission is to elevate user experiences through
-                                clean code and intuitive designs. From the
-                                front-end to the back-end, I'm ready to tackle
-                                any challenge and help your web projects shine
-                                in today's digital landscape.
-                            </motion.p>
-
-                            <motion.div
-                                variants={fadeIn}
-                                className="flex items-center"
-                            >
-                                <button className="text-white bg-purple-600 p-2 px-6 rounded-full tracking-widest">
-                                    Resume
-                                </button>
-                            </motion.div>
-                        </motion.div>
-                    </motion.div>
+                    <Nav
+                        activeTab={activeTab}
+                        setActiveTab={setActiveTab}
+                        tabs={tabs}
+                    />
+                    {activeTab == "home" && <Intro />}
                 </div>
             </div>
         </div>

@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-function Nav() {
-    const tabs = [
-        { id: "home", label: "Home" },
-        { id: "projects", label: "Projects" },
-        { id: "fun", label: "Something Fun" },
-        { id: "roar", label: "Roar" },
-    ];
-    const [activeTab, setActiveTab] = useState(tabs[0].id);
+function Nav({activeTab, setActiveTab, tabs}) {
+   
     return (
         <div className="flex  items-center space-x-4">
             {tabs.map((tab) => (

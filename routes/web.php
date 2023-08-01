@@ -17,7 +17,16 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return inertia('Index');
+    return redirect('/projects/doctor');
+});
+
+Route::get('/projects/{project}', function ($project) {
+    $projects = ['doctor'];
+    if (in_array($project, $projects)) {
+        return inertia("Projects/".ucfirst($project));
+    };
+
+    return redirect('/');
 });
 
 Route::get('/dashboard', function () {
@@ -30,4 +39,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
