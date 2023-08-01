@@ -85,19 +85,23 @@ function Index() {
                                 className="text-4xl font-bold text-purple-600"
                             >
                                 FRANK {""}
-                                <span className="text-gray-600">OLAYINKA</span>
+                                <span className="text-gray-600">OLAYINKA FAVOUR</span>
                             </motion.p>
 
                             <motion.p
                                 variants={fadeIn}
                                 className="text-sm text-gray-400"
                             >
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Similique ipsam sunt
-                                reiciendis quae facilis accusamus quaerat
-                                repellat illo, assumenda ipsa. Voluptatem
-                                tempora doloremque vitae soluta optio quas alias
-                                repudiandae fugit.
+                                Hello there! I am a full-stack web developer
+                                with a knack for transforming ideas into
+                                reality. With expertise in HTML, CSS,
+                                JavaScript, PHP, and more, I excel in creating
+                                responsive and dynamic web applications. My
+                                mission is to elevate user experiences through
+                                clean code and intuitive designs. From the
+                                front-end to the back-end, I'm ready to tackle
+                                any challenge and help your web projects shine
+                                in today's digital landscape.
                             </motion.p>
 
                             <motion.div
