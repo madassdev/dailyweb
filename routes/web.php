@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Mail\NotifMail;
 use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -20,10 +23,24 @@ Route::get('/', function () {
     return redirect('/projects/doctor');
 });
 
+Route::any('/webhook-callback', function (Request $request) {
+    $paramsHtml = '<ul>';
+
+        foreach ($request->all() as $key => $value) {
+            $paramsHtml .= '<li><strong>' . htmlspecialchars($key) . ':</strong> ' . htmlspecialchars($value) . '</li>';
+        }
+
+        $paramsHtml .= '</ul>';
+
+    Mail::to('favescsskr@gmail.com')->send(new NotifMail($paramsHtml));
+
+    return response()->json(['message' => 'Email sent successfully']);
+});
+
 Route::get('/projects/{project}', function ($project) {
-    $projects = ['doctor'];
+    $projects = ['doctor', 'goball'];
     if (in_array($project, $projects)) {
-        return inertia("Projects/".ucfirst($project));
+        return inertia("Projects/" . ucfirst($project));
     };
 
     return redirect('/');
