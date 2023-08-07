@@ -1,10 +1,10 @@
 <div>
 @php
-$paramsHtml = '<ul>';
+$paramsHtml = '<ul>xxx';
 
-    foreach (request()->all() as $key => $value) {
-        $paramsHtml .= '<li><strong>' . htmlspecialchars($key) . ':</strong> ' . htmlspecialchars($value) . '</li>';
-    }
+    // foreach (request()->all() as $key => $value) {
+    //     $paramsHtml .= '<li><strong>' . htmlspecialchars($key) . ':</strong> ' . htmlspecialchars($value) . '</li>';
+    // }
 
     $paramsHtml .= '</ul>';
 @endphp
