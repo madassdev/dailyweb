@@ -1,6 +1,6 @@
 <div>
 @php
-$paramsHtml = '<ul>xxx';
+$paramsHtml = '<ul>receive mail';
 
     // foreach (request()->all() as $key => $value) {
     //     $paramsHtml .= '<li><strong>' . htmlspecialchars($key) . ':</strong> ' . htmlspecialchars($value) . '</li>';

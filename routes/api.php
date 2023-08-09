@@ -21,12 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::any('/webhook-callback', function (Request $request) {
+    logger('webhook_received',$request->all());
     $paramsHtml = '<ul>';
-
         foreach ($request->all() as $key => $value) {
-            $paramsHtml .= '<li><strong>' . htmlspecialchars($key) . ':</strong> ' . htmlspecialchars($value) . '</li>';
+            $paramsHtml .= '<li><strong>' . ($key) . ':</strong> ' . ($value) . '</li>';
         }
-
         $paramsHtml .= '</ul>';
 
     Mail::to('favescsskr@gmail.com')->send(new NotifMail($paramsHtml));
